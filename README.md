@@ -13,5 +13,3 @@ This project is a responsive registration page built with Bootstrap 5. It includ
 Technologies used:
 - HTML5
 - Bootstrap 5 (CSS and JS via CDN)
-
-Feel free to explore and customize the project!
