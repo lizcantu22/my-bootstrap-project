@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">MySite</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" 
+      aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#register" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="#users" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#images" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+
+  <section id="register">
+    <h2 class="mb-4">Register</h2>
+    <form>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="fname" class="form-label">First Name</label>
+          <input type="text" id="fname" class="form-control" placeholder="First Name" />
+        </div>
+        <div class="col-md-6">
+          <label for="lname" class="form-label">Last Name</label>
+          <input type="text" id="lname" class="form-control" placeholder="Last Name" />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+        <input type="email" id="email" class="form-control" placeholder="example@mail.com" required />
+        <div class="invalid-feedback">Email is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+        <input type="password" id="password" class="form-control" placeholder="Password" required />
+        <div class="invalid-feedback">Password is required.</div>
+      </div>
+
+      <div class="form-check mb-3">
+        <input type="checkbox" id="terms" class="form-check-input" />
+        <label for="terms" class="form-check-label">I accept the terms and conditions</label>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </section>
+
+  <hr class="my-5" />
+
+  <section id="users">
+    <h2 class="mb-4">Users</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>1</th><td>David</td><td>Bowie</td><td>David.b@gmail.com</td></tr>
+          <tr><th>2</th><td>Bob</td><td>Dylan</td><td>Bob.D@gmail.com</td></tr>
+          <tr><th>3</th><td>Ozzy</td><td>Osbourn</td><td>Ozzy.O@gmail.com</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="my-5" />
+
+</div>
+
+<div class="container-fluid px-0" id="images">
+  <img src="c:\Users\hanna\OneDrive\Pictures\dontstop.PNG" class="img-fluid w-100" alt="Main Image" />
+
+  <div class="text-center my-4">
+    <img src="c:\Users\hanna\OneDrive\Pictures\yourthere.PNG" class="rounded-circle mb-3" alt="Circle Image" />
+
+    <div class="d-flex justify-content-center gap-3">
+      <!-- Visible on all screen sizes -->
+      <button class="btn btn-primary">Visible Always</button>
+      <!-- Hidden on small screens, visible md and up -->
+      <button class="btn btn-secondary d-none d-md-block">Hidden on small</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('form');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', e => {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
